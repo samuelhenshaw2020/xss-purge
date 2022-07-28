@@ -8,11 +8,11 @@
   ],
   "scripts": {
     "dev": "ts-node ./src/index.ts",
-    "build": "tsc --project ./ & npm run copy",
+    "build": "npm run clean && mkdir ./lib && tsc --project ./ && npm run copy",
     "start:ts": "ts-node ./example/index.ts",
     "start:js": "nodemon ./example/index.js",
     "copy": "cp ./src/xss.d.ts ./lib",
-    "clean": "rm -r ./lib "
+    "clean": "rimraf ./lib"
   },
   "types": "lib/xss.d.ts",
   "engines": {
